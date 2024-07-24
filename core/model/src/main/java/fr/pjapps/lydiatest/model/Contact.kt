@@ -1,7 +1,7 @@
 package fr.pjapps.lydiatest.model
 
 data class Contact(
-    val id: Long,
+    val uuid: String,
     val gender: String,
     val title: String,
     val first: String,

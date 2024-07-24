@@ -1,4 +1,4 @@
-package fr.pjapps.lydiatest.datasource.model
+package fr.pjapps.lydiatest.datasource.remote
 
 data class ResultModelApi(
     val results : List<ContactModelApi>
@@ -13,6 +13,7 @@ data class ContactModelApi(
     val registered: Registered,
     val location: Location,
     val picture: Picture,
+    val login : Login,
 )
 
 data class Name(
@@ -26,7 +27,7 @@ data class Location(
     val city: String,
     val state: String,
     val country: String,
-    val postcode: Int,
+    val postcode: String,
     val coordinates: Coordinates,
 )
 
@@ -49,4 +50,8 @@ data class Picture(
     val large: String,
     val medium: String,
     val thumbnail: String,
+)
+
+data class Login(
+    val uuid:String,
 )

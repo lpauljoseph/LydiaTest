@@ -1,5 +1,6 @@
 package fr.pjapps.lydiatest.database.dao
 
+import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -13,14 +14,17 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface ContactDao {
 
-    @Insert(onConflict = OnConflictStrategy.ABORT)
-    fun insert(plantEntity: ContactEntity): Long
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun insert(contactEntity: ContactEntity): Long
 
     @Query("SELECT * FROM contacts")
-    fun all(): Flow<List<ContactEntity>>
+    fun all(): PagingSource<Int, ContactEntity>
 
-    @Query("SELECT * FROM contacts WHERE id = :id")
-    fun loadById(id: Long): Flow<ContactEntity>
+    @Query("SELECT * FROM contacts")
+    fun allContact(): Flow<List<ContactEntity>>
+
+    @Query("SELECT * FROM contacts WHERE uuid = :uuid")
+    fun loadById(uuid: Long): Flow<ContactEntity>
 
     @Query("DELETE FROM contacts")
     fun deleteAll()

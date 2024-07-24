@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import fr.pjapps.lydiatest.datasource.ContactRemoteDataSource
+import fr.pjapps.lydiatest.datasource.local.LocalDataSource
 import javax.inject.Singleton
 
 @Module
@@ -19,7 +19,18 @@ object RemoteDataSourceModule {
 
     @Provides
     @Singleton
-    fun provideContactRemoteDataSource(apiService: ApiService): ContactRemoteDataSource {
-        return ContactRemoteDataSourceImpl(apiService)
+    fun provideContactRemoteMediator(
+        contactRemoteDataSource: ContactRemoteDataSource,
+        contactLocalDataSource: LocalDataSource
+    ): ContactRemoteMediator {
+        return ContactRemoteMediator(contactRemoteDataSource, contactLocalDataSource)
+    }
+
+    @Provides
+    @Singleton
+    fun provideContactRemoteDataSource(
+        apiService: ApiService,
+    ): ContactRemoteDataSource {
+        return ContactRemoteDataSource(apiService)
     }
 }

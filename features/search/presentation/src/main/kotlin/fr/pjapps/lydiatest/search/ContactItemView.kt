@@ -16,11 +16,11 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun ContactItemView(
     contact: SearchContactUiState,
-    onItemClick: (Long) -> Unit = {}
+    onItemClick: (String) -> Unit = {}
 ) {
     Column(modifier = Modifier
         .fillMaxWidth()
-        .clickable { onItemClick(contact.id) }
+        .clickable { onItemClick(contact.uuid) }
         .padding(10.dp)) {
         Text(text = contact.title)
         Text(text = contact.firstName)
@@ -28,5 +28,6 @@ fun ContactItemView(
         Text(text = contact.gender)
         Text(text = contact.phone)
         Text(text = contact.cell)
+        Text(text = contact.uuid)
     }
 }

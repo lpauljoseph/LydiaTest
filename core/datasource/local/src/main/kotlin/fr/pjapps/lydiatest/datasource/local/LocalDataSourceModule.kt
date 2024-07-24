@@ -5,7 +5,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import fr.pjapps.lydiatest.database.dao.ContactDao
-import fr.pjapps.lydiatest.datasource.ContactLocalDataSource
+import fr.pjapps.lydiatest.database.dao.PageDao
 import javax.inject.Singleton
 
 @Module
@@ -14,7 +14,7 @@ object LocalDataSourceModule {
 
     @Provides
     @Singleton
-    fun provideContactLocalDataSource(dao: ContactDao): ContactLocalDataSource {
-        return ContactLocalDataSourceImpl(dao)
+    fun provideContactLocalDataSource(contactDao: ContactDao, pageDao: PageDao): LocalDataSource {
+        return LocalDataSource(contactDao, pageDao)
     }
 }

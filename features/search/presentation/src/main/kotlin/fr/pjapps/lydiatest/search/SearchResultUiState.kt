@@ -2,17 +2,10 @@ package fr.pjapps.lydiatest.search
 
 import androidx.compose.runtime.Stable
 import fr.pjapps.lydiatest.model.Contact
-import kotlinx.collections.immutable.ImmutableList
-import kotlinx.collections.immutable.persistentListOf
-
-@Stable
-data class SearchResultUiState(
-    val contacts: ImmutableList<SearchContactUiState> = persistentListOf()
-)
 
 @Stable
 data class SearchContactUiState(
-    val id: Long,
+    val uuid: String,
     val title: String,
     val firstName: String,
     val lastName: String,
@@ -21,7 +14,7 @@ data class SearchContactUiState(
     val cell: String,
 ) {
     constructor(contact: Contact) : this(
-        id = contact.id,
+        uuid = contact.uuid,
         title = contact.title,
         firstName = contact.first,
         lastName = contact.last,
@@ -30,4 +23,3 @@ data class SearchContactUiState(
         phone = contact.phone,
     )
 }
-

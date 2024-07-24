@@ -8,6 +8,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import fr.pjapps.lydiatest.database.dao.ContactDao
+import fr.pjapps.lydiatest.database.dao.PageDao
 import javax.inject.Singleton
 
 @Module
@@ -24,5 +25,8 @@ object DatabaseModule {
 
     @Provides
     fun provideContactDao(database: AppDatabase): ContactDao = database.contactDao()
+
+    @Provides
+    fun providePageDao(database: AppDatabase): PageDao = database.pageDao()
 
 }

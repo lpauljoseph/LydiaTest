@@ -11,7 +11,7 @@ import androidx.room.PrimaryKey
     tableName = "contacts",
 )
 data class ContactEntity(
-    @PrimaryKey( autoGenerate = true) val id: Long,
+    @PrimaryKey val uuid: String,
     val title: String,
     @ColumnInfo(name = "first_name") val firstName: String,
     @ColumnInfo(name = "last_name") val lastName: String,

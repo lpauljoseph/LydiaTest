@@ -8,9 +8,12 @@ android {
 }
 
 dependencies {
-    implementation(projects.core.datasource)
     implementation(projects.core.model)
     implementation(projects.core.repository)
+    implementation(projects.core.datasource.local)
+    implementation(projects.core.datasource.remote)
+    implementation(projects.core.database)
     implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.paging.runtime)
 
 }
