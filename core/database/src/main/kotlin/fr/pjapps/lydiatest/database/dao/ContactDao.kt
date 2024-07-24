@@ -24,7 +24,7 @@ interface ContactDao {
     fun allContact(): Flow<List<ContactEntity>>
 
     @Query("SELECT * FROM contacts WHERE uuid = :uuid")
-    fun loadById(uuid: Long): Flow<ContactEntity>
+    fun loadById(uuid: String): Flow<ContactEntity>
 
     @Query("DELETE FROM contacts")
     fun deleteAll()

@@ -25,6 +25,8 @@ class LocalDataSource @Inject constructor(
 
     fun all(): Flow<List<ContactEntity>> = contactDao.allContact()
 
+    fun getContact(contactUUID: String) = contactDao.loadById(contactUUID)
+
     suspend fun getPageNumber(): PageEntity = withContext(Dispatchers.IO) {
         pageDao.getPage()
     }

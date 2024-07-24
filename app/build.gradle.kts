@@ -40,6 +40,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(projects.core.model)
     implementation(projects.features.search.presentation)
+    implementation(projects.features.details.presentation)
     implementation(projects.core.repository)
     implementation(projects.core.repository.impl)
     implementation(projects.core.datasource.remote)

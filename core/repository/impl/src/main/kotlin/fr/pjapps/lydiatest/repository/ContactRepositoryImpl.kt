@@ -32,6 +32,9 @@ open class ContactRepositoryImpl @Inject constructor(
     override fun getAllContacts(): Flow<List<Contact>> =
         contactLocalDataSource.all().map { list -> list.map { it.toDomain() } }
 
+    override fun getContact(uuid: String): Flow<Contact> =
+        contactLocalDataSource.getContact(uuid).map { it.toDomain() }
+
 }
 
 internal fun ContactEntity.toDomain() = Contact(

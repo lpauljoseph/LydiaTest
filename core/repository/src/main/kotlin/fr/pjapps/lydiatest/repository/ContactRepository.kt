@@ -9,4 +9,6 @@ interface ContactRepository {
     fun fetchContacts() : Flow<PagingData<Contact>>
 
     fun getAllContacts(): Flow<List<Contact>>
+
+    fun getContact(uuid:String) : Flow<Contact>
 }
