@@ -19,4 +19,7 @@ data class ContactEntity(
     val cell: String,
     val email: String,
     val gender: String,
+    val thumbnail: String,
+    val image: String,
+    val bigPicture: String,
 )

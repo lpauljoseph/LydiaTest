@@ -37,5 +37,15 @@ class LocalDataSource @Inject constructor(
 }
 
 internal fun Contact.toEntity() = ContactEntity(
-    uuid, title, first, last, phone, cell, email, gender
+    uuid = uuid,
+    title = title,
+    firstName = first,
+    lastName = last,
+    phone = phone,
+    cell = cell,
+    email = email,
+    gender = gender,
+    thumbnail = thumbnail,
+    image = image,
+    bigPicture = bigPicture,
 )

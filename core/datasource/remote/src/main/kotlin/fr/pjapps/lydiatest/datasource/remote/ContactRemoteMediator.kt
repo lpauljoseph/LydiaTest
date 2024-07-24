@@ -52,5 +52,15 @@ class ContactRemoteMediator @Inject constructor(
 }
 
 internal fun ContactModelApi.toDomain() = Contact(
-    uuid = login.uuid, gender, name.title, name.first, name.last, phone, cell, email
+    uuid = login.uuid,
+    gender = gender,
+    title = name.title,
+    first = name.first,
+    last = name.last,
+    phone = phone,
+    cell = cell,
+    email = email,
+    thumbnail = picture.thumbnail,
+    image = picture.medium,
+    bigPicture = picture.large,
 )

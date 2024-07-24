@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "8a437bde20781ad0e58d68f9004c1628",
+    "identityHash": "7fc405591315a03f84c77c823e40e120",
     "entities": [
       {
         "tableName": "contacts",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `title` TEXT NOT NULL, `first_name` TEXT NOT NULL, `last_name` TEXT NOT NULL, `phone` TEXT NOT NULL, `cell` TEXT NOT NULL, `email` TEXT NOT NULL, `gender` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uuid` TEXT NOT NULL, `title` TEXT NOT NULL, `first_name` TEXT NOT NULL, `last_name` TEXT NOT NULL, `phone` TEXT NOT NULL, `cell` TEXT NOT NULL, `email` TEXT NOT NULL, `gender` TEXT NOT NULL, `thumbnail` TEXT NOT NULL, `image` TEXT NOT NULL, `bigPicture` TEXT NOT NULL, PRIMARY KEY(`uuid`))",
         "fields": [
           {
             "fieldPath": "uuid",
@@ -55,6 +55,24 @@
             "columnName": "gender",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "thumbnail",
+            "columnName": "thumbnail",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "image",
+            "columnName": "image",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bigPicture",
+            "columnName": "bigPicture",
+            "affinity": "TEXT",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -96,7 +114,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8a437bde20781ad0e58d68f9004c1628')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7fc405591315a03f84c77c823e40e120')"
     ]
   }
 }

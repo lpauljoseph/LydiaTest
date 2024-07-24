@@ -16,7 +16,7 @@ class ContactViewModel @Inject constructor(
     private val repository: ContactRepository,
 ) : ViewModel() {
 
-    private val _contactDetails = MutableStateFlow(Contact())
+    private val _contactDetails = MutableStateFlow(Contact.DEFAULT)
     val contactDetails: StateFlow<Contact> = _contactDetails
 
     fun fetch(uuid: String?) {

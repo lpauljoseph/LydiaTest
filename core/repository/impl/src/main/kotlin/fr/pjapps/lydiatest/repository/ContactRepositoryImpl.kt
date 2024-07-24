@@ -38,5 +38,15 @@ open class ContactRepositoryImpl @Inject constructor(
 }
 
 internal fun ContactEntity.toDomain() = Contact(
-    uuid = uuid, gender, title, firstName, lastName, phone, cell, email
+    uuid = uuid,
+    gender = gender,
+    title = title,
+    first = firstName,
+    last = lastName,
+    phone = phone,
+    cell = cell,
+    email = email,
+    thumbnail = thumbnail,
+    image = image,
+    bigPicture = bigPicture,
 )
